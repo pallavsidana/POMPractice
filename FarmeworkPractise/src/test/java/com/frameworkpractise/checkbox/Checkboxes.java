@@ -11,16 +11,12 @@ public class Checkboxes extends BasePageObjects {
 	// Click on the check box link
 	@FindBy(xpath = "//*[contains(text(),'Checkboxes')]")
 	WebElement cBoxes;
-
 	public Checkboxes(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-
 	public void cbox() {
-
 		System.out.println("3.1");
 		cBoxes.click();
 	}
-
 }
