@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="LoginPageSuite">
+	<groups>
+		<run>
+			<include name="SmokeTest" />
+
+		</run>
+	</groups>
+	<test name="Controller" parallel="tests" thread-count="5">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="https://the-internet.herokuapp.com/" />
+		<parameter name="usrname" value="tomsmith" />
+		<parameter name="pwd" value="SuperSecretPassword!" />
+		<classes>
+			<class name="com.frameworkpractise.Controller.Controller" />
+
+		</classes>
+	</test>
+
+</suite> <!-- LoginPageSuite -->

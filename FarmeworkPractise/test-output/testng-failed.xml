@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [LoginPageSuite]">
+  <test thread-count="5" name="Controller(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="pwd" value="SuperSecretPassword!"/>
+    <parameter name="url" value="https://the-internet.herokuapp.com/"/>
+    <parameter name="usrname" value="tomsmith"/>
+    <groups>
+      <run>
+        <include name="SmokeTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.frameworkpractise.Controller.Controller">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUP"/>
+          <include name="CheckBoxesTwoCheckboxesTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.frameworkpractise.Controller.Controller -->
+    </classes>
+  </test> <!-- Controller(failed) -->
+</suite> <!-- Failed suite [LoginPageSuite] -->
