@@ -17,12 +17,13 @@ import net.bytebuddy.asm.Advice.Enter;;
 public class Controller extends TestUtilities {
 	
 	@Parameters({ "url", "usrname", "pwd" })
-//	@Test(groups = "SmokeTest")
+	@Test(groups = "SmokeTest")
 	public void OpenPageTest(String url, String usrname, String pwd) {
 		System.out.println("starting to open the page");
 		BasePageObjects obj2 = new BasePageObjects(driver);
 		// get url
 		obj2.openUrl(url);
+		
 		System.out.println("Create driver " + url);
 		sleep(6000);
 		LoginPage lpObj = new LoginPage(driver);
@@ -33,30 +34,12 @@ public class Controller extends TestUtilities {
 		System.out.println(ExpectedText);
 		Assert.assertTrue(actualText.matches(ExpectedText));
 		lpObj.userName(usrname);
+		
 		lpObj.password(pwd);
-		obj2.clickOnButton(lpObj.loginButton());
+		
+	//	obj2.clickOnButton(lpObj.loginButton());
+		obj2.clickOn(driver,lpObj.loginButton(), 10);
 		
 	}
-	@Parameters({ "url", "usrname", "pwd" })
-	@Test(groups = "SmokeTest")
-	public void CheckBoxesTwoCheckboxesTest(String url, String usrname, String pwd) {
-		// open the main page
-		BasePageObjects obj = new BasePageObjects(driver);
-		obj.openUrl(url);
-		System.out.println("Create driver " + url);
-		sleep(6000);
-
-		System.out.println("2");
-		
-		//click on the check box link
-		Checkboxes cObj = new Checkboxes(driver);
-
-		System.out.println("3");
-		cObj.cbox();
-
-		System.out.println("4");
-		//select all the checkboxes
-		//verify all the checkboxes are clicked
-		
-	}
+	
 }
