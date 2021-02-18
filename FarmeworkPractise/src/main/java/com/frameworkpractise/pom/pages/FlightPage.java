@@ -9,10 +9,6 @@ public class FlightPage {
 	public void test() {
 		
 		System.out.println(" i m in the test method");
-		System.out.println(" i m in the test method");
-		System.out.println(" i m in the test method");
-		System.out.println(" i m in the test method");
-		System.out.println(" i m in the test method");
-		System.out.println(" i m in the test method");
+	
 	}
 }
